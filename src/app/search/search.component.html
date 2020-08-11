@@ -1,0 +1,19 @@
+<form autocomplete="off" spellcheck="false">
+  <mat-form-field floatLabel="never">
+    <mat-label>Ara...</mat-label>
+    <input matInput [formControl]="searchControl">
+  </mat-form-field>
+</form>
+
+<h3 class="search-result-title">SONUÇLAR</h3>
+
+<div class="items">
+  <div class="item" *ngFor="let movie of movies$ | async as movies">
+    <div class="img-inner">
+      <img class="item-img" src="{{movie.posterUrl}}">
+    </div>
+    <div class="details">
+      <div class="item-title">{{movie.title}}</div>
+    </div>
+  </div>
+</div>

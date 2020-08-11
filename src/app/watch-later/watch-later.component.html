@@ -1,0 +1,27 @@
+<div class="grid-box">
+
+<!--  <div class="filter">
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select disableOptionCentering>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>-->
+
+  <div class="items">
+    <div class="favorite-item" *ngFor="let movie of movies$ | async">
+      <a routerLink="/movie/{{movie.id}}">
+        <div class="img-aspect">
+          <img class="img" src="{{movie.posterUrl}}" alt="">
+        </div>
+        <div class="details">
+          <div class="item-title">{{movie.title}}</div>
+          <div class="item-year">{{movie.year}}</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

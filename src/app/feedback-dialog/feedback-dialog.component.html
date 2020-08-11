@@ -1,0 +1,12 @@
+<form autocomplete="off" spellcheck="false" (submit)="submit()">
+  <h2 mat-dialog-title>Geri bildirim gönder</h2>
+  <div mat-dialog-content class="custom-scroll">
+    <mat-form-field>
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="8"></textarea>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button color="primary">GÖNDER</button>
+  </div>
+</form>

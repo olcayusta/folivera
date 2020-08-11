@@ -1,0 +1,21 @@
+<mat-toolbar class="mat-elevation-z4" appSticky>
+
+  <button mat-icon-button (click)="openSidenav.emit()" class="menu-button" hidden>
+    <app-menu-icon></app-menu-icon>
+  </button>
+  <app-topbar-logo-renderer></app-topbar-logo-renderer>
+
+  <span class="flex-spacer"></span>
+
+  <ng-container *ngIf="user$ | async as user; else notLogged">
+    <app-top-bar-user></app-top-bar-user>
+  </ng-container>
+
+  <ng-template #notLogged>
+    <a mat-icon-button routerLink="/search" matTooltip="Ara" class="search-icon">
+      <app-search-icon></app-search-icon>
+    </a>
+    <a mat-button routerLink="/login">OTURUM AÇ</a>
+    <!--<button mat-button (click)="openLoginDialog()">OTURUM AÇ</button>-->
+  </ng-template>
+</mat-toolbar>

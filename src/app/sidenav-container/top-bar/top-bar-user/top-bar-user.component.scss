@@ -1,0 +1,63 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.reset-button {
+  background: none;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.avatar-button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 0 8px;
+  border-radius: 50%;
+}
+
+.no-avatar-button {
+  background-color: #BB86FC;
+}
+
+.img-back {
+  background-color: #1e1e1e;
+}
+
+.avatar {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #bb86fc;
+  // border: 1px solid #bb86fc;
+  // padding-top: calc(100% / (960/1440));
+}
+
+.no-avatar {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  color: black;
+}
+
+@media screen and (max-width: 599px) {
+  .avatar-button {
+    width: 24px;
+    height: 24px;
+    // margin-right: 0 !important;
+  }
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+  }
+}
+
