@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@shared/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
 
@@ -24,18 +24,19 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle(`Oturum aç - ${environment.appName}`)
+    this.title.setTitle(`Oturum aç - ${environment.appName}`);
+
     this.form = this.fb.group({
-      email: ['olcayusta02@gmail.com', [Validators.required, Validators.email]],
-      password: ['12345678', [Validators.required, Validators.min(8)]],
+      email: ['olcayusta0@gmail.com', [Validators.required, Validators.email]],
+      password: ['abc', [Validators.required, Validators.min(8)]],
     }, {updateOn: 'submit'});
   }
 
   submit(): void {
     if (this.form.valid) {
       this.loader = true;
-      this.authService.login('aaa', 'bbb').subscribe(value => {
-        console.log(value);
+      const {email, password} = this.form.value;
+      this.authService.login(email, password).subscribe(value => {
         this.loader = false;
         markDirty(this);
       });

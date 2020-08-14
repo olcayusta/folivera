@@ -1,7 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AuthService } from '@shared/services/auth.service';
+import { AuthService } from '../../auth/services/auth.service';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { environment } from '@environments/environment';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  isLoggedIn = false;
+  isLoggedIn$: Observable<boolean>;
 
   constructor(
     private authService: AuthService,
@@ -20,6 +21,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle(`${environment.appName}`)
-    this.isLoggedIn = this.authService.isLoggedIn;
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
   }
 }

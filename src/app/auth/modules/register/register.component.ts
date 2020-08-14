@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@shared/services/auth.service';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
+import { UserService } from '@shared/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
+    private userService: UserService,
     private title: Title
   ) {
   }
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
   submit(): void {
     if (this.form.valid) {
-      this.authService.register('olcay02@gmail.com', '123456', 'abc', 'cde').subscribe(value => {
+      this.userService.register('olcay02@gmail.com', '123456', 'abc', 'cde').subscribe(value => {
         console.log(value);
       });
     }

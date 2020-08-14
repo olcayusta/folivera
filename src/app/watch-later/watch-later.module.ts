@@ -16,4 +16,5 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
   ]
 })
-export class WatchLaterModule { }
+export class WatchLaterModule {
+}

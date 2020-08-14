@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty, Type } from '@angular/core';
 import { User } from '@shared/models/user';
-import { AuthService } from '@shared/services/auth.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { SettingsBottomSheetComponent } from '../../../settings-bottom-sheet/settings-bottom-sheet.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AvatarPopupComponent } from '../avatar-popup/avatar-popup.component';
@@ -30,11 +30,11 @@ export class TopBarUserComponent implements OnInit {
     private breakpointObserver: BreakpointObserver
   ) {
     this.blockScrollStrategy = this.sso.block();
+    this.user = this.authService.userValue;
   }
 
   ngOnInit(): void {
     this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
-    this.user = this.authService.userValue;
   }
 
   async openAvatarPopup(): Promise<void> {

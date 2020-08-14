@@ -1,12 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { LibraryService } from '../library/services/library.service';
 import { Movie } from '@shared/models/movie';
-import { Observable } from 'rxjs';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-watch-later',
@@ -15,20 +10,16 @@ interface Food {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WatchLaterComponent implements OnInit {
-  movies$: Observable<Movie[]>;
-
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Eklendiği tarih (en yeni)'},
-    {value: 'pizza-1', viewValue: 'Eklendiği tarih (en eski)'},
-    {value: 'tacos-2', viewValue: 'En popüler'}
-  ];
+  movies: Movie[];
 
   constructor(
-    private libraryService: LibraryService
-  ) { }
+    private libraryService: LibraryService,
+    private route: ActivatedRoute
+  ) {
+  }
 
   ngOnInit(): void {
-    this.movies$ = this.libraryService.getWatchLaterMovies();
+    this.movies = this.route.snapshot.data.movies;
   }
 
 }

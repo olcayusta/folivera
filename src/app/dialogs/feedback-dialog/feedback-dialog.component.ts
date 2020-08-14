@@ -1,14 +1,13 @@
 import {
   Component,
-  OnInit,
   ChangeDetectionStrategy,
   NgModule
 } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FeedbackService } from './feedback.service';
 
 @Component({
   selector: 'app-feedback-dialog',
@@ -16,16 +15,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./feedback-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FeedbackDialogComponent implements OnInit {
+export class FeedbackDialogComponent {
 
-  constructor() {
+  constructor(
+    private feedbackService: FeedbackService
+  ) {
   }
 
-  ngOnInit(): void {
-  }
-
-  submit(): void {
-    alert('Test!');
+  submit(value: string) {
+    this.feedbackService.save(value).subscribe();
   }
 }
 
@@ -34,7 +32,6 @@ export class FeedbackDialogComponent implements OnInit {
   imports: [
     MatInputModule,
     MatDialogModule,
-    OverlayModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule

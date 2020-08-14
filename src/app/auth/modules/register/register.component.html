@@ -6,12 +6,12 @@
     </div>
 
     <div class="form-body">
-      <mat-form-field appearance="standard">
+      <mat-form-field>
         <mat-label>E-posta</mat-label>
         <input matInput formControlName="email">
         <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta girin</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="standard">
+      <mat-form-field>
         <mat-label>Şifre</mat-label>
         <input type="password" matInput formControlName="password">
         <mat-error *ngIf="form.get('password').hasError('required')">Bir parola girin</mat-error>

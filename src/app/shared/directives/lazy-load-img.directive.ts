@@ -18,7 +18,7 @@ export class LazyLoadImgDirective implements AfterViewInit {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         observer.disconnect();
-        const el = this.elementRef.nativeElement as HTMLImageElement;
+        const el: HTMLImageElement = this.elementRef.nativeElement;
         el.src = el.getAttribute('data-src');
       }
     });

@@ -40,9 +40,8 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ChipListGenreComponent } from './sidenav-container/home/chip-list-genre/chip-list-genre.component';
 import { SettingsBottomSheetComponent } from './settings-bottom-sheet/settings-bottom-sheet.component';
 import { TopBarUserComponent } from './sidenav-container/top-bar/top-bar-user/top-bar-user.component';
-import { LoginDialogComponent } from './login-dialog/login-dialog.component';
-import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
+import { ResetPasswordComponent } from './auth/components/reset-password/reset-password.component';
 
 export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
   return () => overlay.scrollStrategies.block();
@@ -63,7 +62,7 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     ChipListGenreComponent,
     SettingsBottomSheetComponent,
     TopBarUserComponent,
-    LoginDialogComponent
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +89,6 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     MatSelectModule,
     MatListModule,
     MatBottomSheetModule,
-    MatTabsModule,
     MatInputModule
   ],
   providers: [

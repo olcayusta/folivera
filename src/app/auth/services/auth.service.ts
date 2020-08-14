@@ -11,10 +11,11 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn = false;
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
   private userSubject: BehaviorSubject<User>;
-  public user: Observable<User>;
+  user: Observable<User>;
 
   constructor(
     private router: Router,
@@ -22,52 +23,33 @@ export class AuthService {
   ) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('USER')));
     this.user = this.userSubject.asObservable();
-    const logged = JSON.parse(localStorage.getItem('USER'));
-    this.isLoggedIn = logged;
+
+    const logged = !!JSON.parse(localStorage.getItem('USER'));
+    this.isLoggedInSubject.next(logged);
   }
 
   public get userValue(): User {
     return this.userSubject.value;
   }
 
-  getAccount() {
-    const logged = JSON.parse(localStorage.getItem('USER'));
-    this.isLoggedIn = logged;
-    return logged;
-  }
-
-  register(email: string, password: string, displayName: string, avatarUrl: string): Observable<User> {
-    return this.http.post<User>(`${environment.apiUrl}/users`, {
-      email, password, displayName, avatarUrl
-    });
-  }
-
   login(email: string, password: string): Observable<User> {
     return this.http.post<User>(`${environment.apiUrl}/users/login`, {
       email, password
     })
-      .pipe(tap(x => {
-        const user = {
-          id: 1,
-          email: 'olcayusta02@gmail.com',
-          displayName: 'Olcay Usta',
-          avatarUrl: 'https://a.rsg.sc/s/GTAVCAnniversary/n/GTAVC62.png'
-        };
+      .pipe(tap(async user => {
         localStorage.setItem('USER', JSON.stringify(user));
+        this.isLoggedInSubject.next(true);
         this.userSubject.next(user);
+        // await this.router.navigateByUrl('/');
         return user;
-        // this.router.navigateByUrl('/');
       }));
-  }
-
-  login2(email: string, password: string) {
-
   }
 
   logout() {
     localStorage.clear();
     this.userSubject.next(null);
-    window.location.reload();
+    this.isLoggedInSubject.next(false)
+    // window.location.reload();
     // this.router.navigateByUrl('/login');
   }
 }

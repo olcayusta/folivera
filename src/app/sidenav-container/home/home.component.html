@@ -1,4 +1,4 @@
 <!--<app-chip-list-genre></app-chip-list-genre>-->
 
-<app-continue-watching *ngIf="isLoggedIn"></app-continue-watching>
+<app-continue-watching *ngIf="isLoggedIn$ | async"></app-continue-watching>
 <app-most-watching></app-most-watching>

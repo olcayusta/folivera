@@ -6,13 +6,13 @@
   <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
     <div class="form-content">
 
-      <mat-form-field appearance="standard">
+      <mat-form-field>
         <mat-label>E-posta</mat-label>
         <input matInput formControlName="email">
         <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="standard">
+      <mat-form-field>
         <mat-label>Şifre</mat-label>
         <input [type]="passwordHide ? 'password' : 'text'" matInput formControlName="password">
         <mat-error *ngIf="form.get('password').hasError('required')">Bir şifre girin</mat-error>

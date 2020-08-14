@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AuthService } from '@shared/services/auth.service';
+import { AuthService } from '../auth/services/auth.service';
 
 @Component({
   selector: 'app-settings-bottom-sheet',

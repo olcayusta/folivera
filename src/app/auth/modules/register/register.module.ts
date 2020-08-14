@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
-import { IconsModule } from '../shared/icons/icons.module';
+import { IconsModule } from '../../../shared/icons/icons.module';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -20,6 +21,9 @@ import { IconsModule } from '../shared/icons/icons.module';
     MatButtonModule,
     MatRippleModule,
     IconsModule
+  ],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'standard'}}
   ]
 })
 export class RegisterModule {

@@ -1,7 +1,7 @@
-import {Directive, ElementRef, Inject, Renderer2} from '@angular/core';
-import {fromEvent} from 'rxjs';
-import {distinctUntilChanged, map, pairwise, startWith} from 'rxjs/operators';
-import {BreakpointObserver} from '@angular/cdk/layout';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { fromEvent } from 'rxjs';
+import { distinctUntilChanged, map, pairwise, startWith } from 'rxjs/operators';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 const THRESHOLD = 56;
 

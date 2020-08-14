@@ -1,12 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy, NgModule, ElementRef } from '@angular/core';
-import { AuthService } from '@shared/services/auth.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { User } from '@shared/models/user';
 import { RouterModule } from '@angular/router';
 import { IconsModule } from '@shared/icons/icons.module';
 import { MatDialog } from '@angular/material/dialog';
-import { SettingsDialogComponent } from '../../../settings-dialog/settings-dialog.component';
+import { SettingsDialogComponent } from '../../../dialogs/settings-dialog/settings-dialog.component';
 
 @Component({
   selector: 'app-avatar-popup',
@@ -28,15 +28,15 @@ export class AvatarPopupComponent implements OnInit {
     this.user = this.authService.userValue;
   }
 
-  exitToApp(): void {
-    this.authService.logout();
-  }
-
   openSettingsDialog(): void {
     this.dialog.open(SettingsDialogComponent, {
       width: '768px',
       autoFocus: false
     });
+  }
+
+  exitToApp(): void {
+    this.authService.logout();
   }
 }
 

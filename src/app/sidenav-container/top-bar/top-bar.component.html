@@ -7,7 +7,7 @@
 
   <span class="flex-spacer"></span>
 
-  <ng-container *ngIf="user$ | async as user; else notLogged">
+  <ng-container *ngIf="isLoggedIn$ | async; else notLogged">
     <app-top-bar-user></app-top-bar-user>
   </ng-container>
 
@@ -16,6 +16,5 @@
       <app-search-icon></app-search-icon>
     </a>
     <a mat-button routerLink="/login">OTURUM AÇ</a>
-    <!--<button mat-button (click)="openLoginDialog()">OTURUM AÇ</button>-->
   </ng-template>
 </mat-toolbar>
