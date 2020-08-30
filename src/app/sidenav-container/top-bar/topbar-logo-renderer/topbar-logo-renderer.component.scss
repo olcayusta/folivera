@@ -9,10 +9,11 @@ a {
 
 sup {
   display: inline-block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1;
-  margin-left: 4px;
+  margin-left: 2px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 599px) {

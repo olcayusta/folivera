@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ɵmarkDirty as markDirty } from '@angular/core';
 import { Movie } from '@shared/models/movie';
-import { LibraryService } from '../services/library.service';
+import { LibraryService } from '../../services/library.service';
 import { Observable } from 'rxjs';
 
 @Component({

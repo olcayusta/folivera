@@ -22,7 +22,7 @@ const routes: Routes = [
       },
       {path: 'movie/:movieId', loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule)},
       {path: 'help', loadChildren: () => import('./help/help.module').then(m => m.HelpModule)},
-      {path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)}
+      {path: 'search/:searchTerm', loadChildren: () => import('./search/search.module').then(m => m.SearchModule)}
     ]
   },
   {

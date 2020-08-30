@@ -25,7 +25,7 @@ a {
 
 .details {
   position: relative;
-  padding: 16px 16px 24px 8px;
+  padding: 16px 16px 24px 16px;
   background-color: #1e1e1e;
 }
 
@@ -88,8 +88,8 @@ app-group-icon {
 
 @media (max-width: 599px) {
   .details {
-    padding: 16px 0 16px 8px;
-    margin: 0 8px 0 8px;
+    padding: 16px;
+    // margin: 0 8px 0 8px;
   }
 
   .mat-menu-item {

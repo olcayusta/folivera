@@ -5,6 +5,7 @@ import { Movie } from '@shared/models/movie';
 import { Observable, Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { environment } from '@environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -20,21 +21,27 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   constructor(
     private searchService: SearchService,
+    private route: ActivatedRoute,
     private title: Title
   ) {
   }
 
   ngOnInit(): void {
-    this.title.setTitle(`Ara - ${environment.appName}`);
+
+    const searchTerm = this.route.snapshot.paramMap.get('searchTerm');
+    this.movies$ = this.searchService.search(searchTerm);
+
+
+/*    this.title.setTitle(`Ara - ${environment.appName}`);
     this.subscription = this.searchControl.valueChanges.subscribe(value => {
       if (value.length) {
         this.movies$ = this.searchService.search(value);
         this.title.setTitle(`${value} - ${environment.appName}`)
       }
-    });
+    });*/
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }

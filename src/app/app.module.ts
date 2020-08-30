@@ -42,6 +42,8 @@ import { SettingsBottomSheetComponent } from './settings-bottom-sheet/settings-b
 import { TopBarUserComponent } from './sidenav-container/top-bar/top-bar-user/top-bar-user.component';
 import { MatInputModule } from '@angular/material/input';
 import { ResetPasswordComponent } from './auth/components/reset-password/reset-password.component';
+import { SearchFormComponent } from './sidenav-container/top-bar/search-form/search-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
   return () => overlay.scrollStrategies.block();
@@ -62,7 +64,8 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     ChipListGenreComponent,
     SettingsBottomSheetComponent,
     TopBarUserComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +92,9 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     MatSelectModule,
     MatListModule,
     MatBottomSheetModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {horizontalPosition: 'start'}},

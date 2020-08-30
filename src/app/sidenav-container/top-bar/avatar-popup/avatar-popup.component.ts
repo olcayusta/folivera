@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { IconsModule } from '@shared/icons/icons.module';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsDialogComponent } from '../../../dialogs/settings-dialog/settings-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-avatar-popup',
@@ -20,7 +21,8 @@ export class AvatarPopupComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private elementRef: ElementRef,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {
   }
 
@@ -37,6 +39,9 @@ export class AvatarPopupComponent implements OnInit {
 
   exitToApp(): void {
     this.authService.logout();
+    this.snackBar.open('Oturum kapatıldı', '', {
+      duration: 3000
+    });
   }
 }
 

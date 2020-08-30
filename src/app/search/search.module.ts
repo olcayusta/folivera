@@ -6,6 +6,7 @@ import { SearchComponent } from './search.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ]
 })
 export class SearchModule {

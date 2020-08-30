@@ -1,11 +1,17 @@
-<form autocomplete="off" spellcheck="false">
+<!--<form autocomplete="off" spellcheck="false">
   <mat-form-field floatLabel="never">
     <mat-label>Ara...</mat-label>
     <input matInput [formControl]="searchControl">
   </mat-form-field>
-</form>
+</form>-->
 
-<h3 class="search-result-title">SONUÇLAR</h3>
+<mat-chip-list>
+  <mat-chip>Filmler</mat-chip>
+  <mat-chip>Oyuncular</mat-chip>
+  <mat-chip>Yönetmenler</mat-chip>
+</mat-chip-list>
+
+<h3 class="search-result-title">ARAMA SONUÇLARI</h3>
 
 <div class="items">
   <div class="item" *ngFor="let movie of movies$ | async as movies">

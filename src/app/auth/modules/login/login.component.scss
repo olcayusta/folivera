@@ -92,6 +92,7 @@ app-visibility-off-icon {
     padding: 0;
     border: none;
     border-radius: 0 !important;
+    background-color: transparent !important;
   }
 
   :host {
@@ -100,8 +101,9 @@ app-visibility-off-icon {
   }
 
   h1 {
-    font-size: 14px;
-    line-height: 20px;
-    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 16px 0;
   }
 }

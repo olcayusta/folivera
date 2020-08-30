@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { SidenavService } from '@shared/services/sidenav.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sidenav',
@@ -43,13 +44,14 @@ export class SidenavComponent {
 
 @NgModule({
   declarations: [SidenavComponent],
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatListModule,
-    IconsModule,
-    RouterModule
-  ]
+    imports: [
+        MatToolbarModule,
+        MatButtonModule,
+        MatListModule,
+        IconsModule,
+        RouterModule,
+        MatIconModule
+    ]
 })
 class SidenavModule {
 }

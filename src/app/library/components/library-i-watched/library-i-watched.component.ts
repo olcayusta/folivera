@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { LibraryService } from '../services/library.service';
+import { LibraryService } from '../../services/library.service';
 import { Observable } from 'rxjs';
 import { Movie } from '@shared/models/movie';
 
