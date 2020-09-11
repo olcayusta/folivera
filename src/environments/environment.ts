@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://192.168.1.100:9001',
-  appName: 'Folivera'
+  apiUrl: 'http://localhost:9001',
+  appName: 'Movie App'
 };
 
 /*
