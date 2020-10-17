@@ -9,13 +9,6 @@
   justify-content: space-between;
 }
 
-h3 {
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 24px;
-  margin: 0;
-}
-
 app-arrow-back-icon,
 app-arrow-forward-icon {
   display: inline-flex;
@@ -41,6 +34,10 @@ mat-chip-list {
 @media screen and (max-width: 599px) {
   .wrapper {
     padding: 0;
+  }
+
+  :host {
+    padding: 24px;
   }
 
   [hidden] {

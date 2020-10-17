@@ -5,6 +5,9 @@
       <!--<img class="img" src="{{movie.posterUrl}}" alt=".." loading="lazy">-->
     </div>
     <div class="details">
+     <!-- <div class="info">
+        <div class="year">{{movie.year}}</div>
+      </div>-->
       <a [routerLink]="['/movie', movie.id]">
         <div class="title">{{movie.originalTitle}}</div>
       </a>
@@ -30,15 +33,12 @@
 <mat-menu #moreMenu="matMenu" overlapTrigger>
   <ng-template matMenuContent let-id="id">
     <button mat-menu-item (click)="addToLibrary(id)">
-      <app-playlist-add-icon></app-playlist-add-icon>
       <span>Kitaplığa ekle</span>
     </button>
     <a mat-menu-item routerLink="watch/200">
-      <app-group-icon></app-group-icon>
       <span>Birlikte izle</span>
     </a>
     <button mat-menu-item>
-      <app-not-interested-icon></app-not-interested-icon>
       <span>İlgilenmiyorum</span>
     </button>
   </ng-template>

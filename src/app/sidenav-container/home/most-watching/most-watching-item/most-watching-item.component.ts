@@ -1,14 +1,22 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Movie } from '@shared/models/movie';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import {
+  MatBottomSheet,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
 import { LibraryService } from '../../../../library/services/library.service';
 
 @Component({
   selector: 'app-most-watching-item',
   templateUrl: './most-watching-item.component.html',
   styleUrls: ['./most-watching-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MostWatchingItemComponent implements OnInit {
   @Input() movie: Movie;
@@ -17,28 +25,25 @@ export class MostWatchingItemComponent implements OnInit {
     private snackBar: MatSnackBar,
     private bottomSheet: MatBottomSheet,
     private libraryService: LibraryService
-  ) {
-  }
+  ) {}
 
   openBottomSheet(): void {
     this.bottomSheet.open(BottomSheetOverviewExampleSheet, {
       autoFocus: false,
       // panelClass: 'my-class',
-      closeOnNavigation: true
+      closeOnNavigation: true,
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   addToLibrary(movieId: number): void {
-    this.libraryService.addToLibrary(movieId).subscribe(value => {
+    this.libraryService.addToLibrary(movieId).subscribe((value) => {
       this.snackBar.open('Kitaplığa eklendi', 'GERİ AL', {
-        duration: 3000
+        duration: 3000,
       });
     });
   }
-
 }
 
 @Component({
@@ -48,8 +53,7 @@ export class MostWatchingItemComponent implements OnInit {
 export class BottomSheetOverviewExampleSheet {
   constructor(
     private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>
-  ) {
-  }
+  ) {}
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();

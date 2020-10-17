@@ -77,25 +77,47 @@ body, html {
 
 /* width */
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 /* Track */
 body::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.38);
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* width */
+.mat-drawer-inner-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+  // background: #1a1a1a;
+  // border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Handle */
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.24);
+  border-right: 1px solid #353535;
+}
+
+/* Handle on hover */
+.mat-drawer-inner-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 .mat-drawer-backdrop.mat-drawer-shown {
   background-color: rgba(255, 255, 255, 0.32) !important;

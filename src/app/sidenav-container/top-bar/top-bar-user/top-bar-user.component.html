@@ -1,9 +1,10 @@
 <!--<a mat-icon-button routerLink="/search" matTooltip="Ara">
   <app-search-icon></app-search-icon>
 </a>-->
-<button mat-icon-button>
+<a mat-icon-button routerLink="/settings">
   <app-settings-icon></app-settings-icon>
-</button>
+  <!--<mat-icon fontSet="material-icons-outlined">settings</mat-icon>-->
+</a>
 <!--    <button mat-icon-button (click)="openSheet.emit()" matTooltip="Filtre">
       <app-filter-list-icon></app-filter-list-icon>
     </button>-->
@@ -24,7 +25,7 @@
 <ng-template #bigScreen>
   <button class="reset-button avatar-button" matTooltip="Olcay Usta" #avatarButton="cdkOverlayOrigin" cdkOverlayOrigin
           (click)="openAvatarPopup()">
-    <img class="avatar" src="assets/Avatar.png" alt="{{user.displayName}}">
+    <img class="avatar" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
   </button>
   <ng-template cdkConnectedOverlay
                (overlayOutsideClick)="closePopup()"

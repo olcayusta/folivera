@@ -4,14 +4,14 @@ import { AuthService } from '../../../auth/services/auth.service';
 import { SettingsBottomSheetComponent } from '../../../settings-bottom-sheet/settings-bottom-sheet.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AvatarPopupComponent } from '../avatar-popup/avatar-popup.component';
-import { ScrollStrategyOptions } from '@angular/cdk/overlay';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { ScrollStrategyOptions } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-top-bar-user',
   templateUrl: './top-bar-user.component.html',
   styleUrls: ['./top-bar-user.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopBarUserComponent implements OnInit {
   isSmallScreen;
@@ -38,7 +38,7 @@ export class TopBarUserComponent implements OnInit {
   }
 
   async openAvatarPopup(): Promise<void> {
-    const {AvatarPopupComponent} = await import('../avatar-popup/avatar-popup.component');
+    const { AvatarPopupComponent } = await import('../avatar-popup/avatar-popup.component');
     this.avatarPopupComponent = AvatarPopupComponent;
     this.avatarPopupOpened = !this.avatarPopupOpened;
     markDirty(this);

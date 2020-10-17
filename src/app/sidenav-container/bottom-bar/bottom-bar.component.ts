@@ -3,6 +3,7 @@ import { SharedModule } from '@shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { IconsModule } from '@shared/icons/icons.module';
 import { MatRippleModule } from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-bottom-bar',
@@ -20,15 +21,7 @@ export class BottomBarComponent implements OnInit {
 }
 
 @NgModule({
-  declarations: [
-    BottomBarComponent
-  ],
-  imports: [
-    SharedModule,
-    RouterModule,
-    IconsModule,
-    MatRippleModule
-  ]
+  declarations: [BottomBarComponent],
+  imports: [SharedModule, RouterModule, IconsModule, MatRippleModule, MatIconModule],
 })
-class BottomBarModule {
-}
+class BottomBarModule {}

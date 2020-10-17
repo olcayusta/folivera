@@ -29,7 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import {
   BottomSheetOverviewExampleSheet,
-  MostWatchingItemComponent
+  MostWatchingItemComponent,
 } from './sidenav-container/home/most-watching/most-watching-item/most-watching-item.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ContinueWatchingItemComponent } from './sidenav-container/home/continue-watching/continue-watching-item/continue-watching-item.component';
@@ -67,13 +67,13 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     TopBarUserComponent,
     ResetPasswordComponent,
     SearchFormComponent,
-    BigSliderComponent
+    BigSliderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
@@ -96,13 +96,12 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     MatBottomSheetModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {horizontalPosition: 'start'}},
-    {provide: MAT_MENU_SCROLL_STRATEGY, useFactory: scrolLFactory, deps: [Overlay]}
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center' } },
+    { provide: MAT_MENU_SCROLL_STRATEGY, useFactory: scrolLFactory, deps: [Overlay] },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

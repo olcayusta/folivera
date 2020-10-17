@@ -19,17 +19,8 @@
 }
 
 mat-card {
-  width: 500px;
-  min-height: 550px;
-  padding: 32px 48px;
-  border-radius: 4px;
-  background-color: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-mat-card {
-  overflow: hidden;
-  border-radius: 8px !important;
+  width: 720px;
+  background-color: transparent;
 }
 
 mat-progress-bar {
@@ -48,13 +39,15 @@ mat-progress-bar {
   justify-content: center;
   align-items: center;
   color: #fff;
+  background-color: #000;
 }
 
 h1 {
-  font-weight: 500;
-  font-size: 28px;
+  font-size: 34px;
+  font-weight: 700;
   line-height: 36px;
-  margin: 16px 0;
+  text-align: center;
+  font-family: Inter, sans-serif;
 }
 
 .row-actions {

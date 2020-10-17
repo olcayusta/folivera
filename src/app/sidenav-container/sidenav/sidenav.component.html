@@ -1,41 +1,59 @@
 <mat-toolbar>
   <button mat-icon-button (click)="closeSidenav()">
-    <app-menu-icon></app-menu-icon>
+    <mat-icon>close</mat-icon>
   </button>
-  <span class="app-title">Folivera</span>
+  <!--<span class="app-title">Folivera</span>-->
 </mat-toolbar>
 <mat-nav-list>
-  <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}" (click)="closeSidenav()">
-    <app-home-icon></app-home-icon>
-    <span>Ana sayfa</span>
+  <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}"
+     (click)="closeSidenav()">
+    <span>Ana Sayfa</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/library" (click)="closeSidenav()">
-    <app-video-library-icon></app-video-library-icon>
-    <span>Kitaplık</span>
+    <span>Originals</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/likes" (click)="closeSidenav()">
-    <app-thumb-up-icon></app-thumb-up-icon>
-    <span>Beğendiğim filmler</span>
+    <span>Just Added</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/wl" (click)="closeSidenav()">
-    <app-watch-later-icon></app-watch-later-icon>
-    <span>Daha sonra izle</span>
+    <span>Çok Yakında</span>
   </a>
 </mat-nav-list>
 <mat-divider></mat-divider>
 <mat-nav-list>
-  <a mat-list-item (click)="openSettingsDialog(); closeSidenav()">
-    <app-settings-icon></app-settings-icon>
-    <span>Hesap & ayarlar</span>
+  <a mat-list-item>
+    Aksiyon
   </a>
-  <a mat-list-item routerLink="/help" (click)="closeSidenav()">
-    <app-help-icon></app-help-icon>
-    <span>Yardım</span>
+  <a mat-list-item>
+    Comedy
   </a>
-  <mat-list-item (click)="openFeedbackDialog(); closeSidenav()">
-    <app-feedback-icon></app-feedback-icon>
-    <span>Geri bildirim gönder</span>
-  </mat-list-item>
+  <a mat-list-item>
+    Crime
+  </a>
+  <a mat-list-item>
+    Documentaries
+  </a>
+  <a mat-list-item>
+    Drama
+  </a>
+  <a mat-list-item>
+    Fantasy & Sci-Fi
+  </a>
+  <a mat-list-item>
+    Korku
+  </a>
+  <a mat-list-item>
+    International
+  </a>
+  <a mat-list-item>
+    Kids & Family
+  </a>
+  <a mat-list-item>
+    Latino
+  </a>
+  <a mat-list-item>
+    Music
+  </a>
 </mat-nav-list>
 <mat-divider></mat-divider>
 <div class="beta-text">© 2020 Google LLC</div>

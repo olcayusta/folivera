@@ -23,6 +23,10 @@ mat-sidenav {
   min-height: 100vh;
 }
 
+mat-sidenav-container {
+  background-color: #000 !important;
+}
+
 .wrapper {
   padding-top: 64px;
 }
@@ -49,4 +53,12 @@ mat-sidenav-container {
 
 :root {
   --medium-emphasis-text-color: rgba(255, 255, 255, 0.6);
+}
+
+.headline-4 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 36px;
+  font-family: Inter, sans-serif;
+  margin: 24px 0;
 }

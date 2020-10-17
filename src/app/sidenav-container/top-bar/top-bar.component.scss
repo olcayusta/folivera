@@ -3,6 +3,8 @@ mat-toolbar {
   top: 0;
   z-index: 4;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 10px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.14);
+  background-color: #272727;
+  // background-color: #212121;
 }
 
 .flex-spacer {
@@ -10,7 +12,6 @@ mat-toolbar {
 }
 
 app-filter-list-icon,
-app-menu-icon,
 ::ng-deep app-search-icon {
   display: inline-flex;
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuIconComponent } from './menu-icon/menu-icon.component';
 import { PauseIconComponent } from './pause-icon/pause-icon.component';
 import { PlayArrowIconComponent } from './play-arrow-icon/play-arrow-icon.component';
 import { HomeIconComponent } from './home-icon/home-icon.component';
@@ -41,7 +40,6 @@ import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.compon
 
 @NgModule({
   declarations: [
-    MenuIconComponent,
     PauseIconComponent,
     PlayArrowIconComponent,
     HomeIconComponent,
@@ -78,10 +76,9 @@ import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.compon
     PlaylistAddIconComponent,
     GroupIconComponent,
     DeleteIconComponent,
-    ArrowBackIconComponent
+    ArrowBackIconComponent,
   ],
   exports: [
-    MenuIconComponent,
     PlayArrowIconComponent,
     PauseIconComponent,
     HomeIconComponent,
@@ -116,11 +113,8 @@ import { ArrowBackIconComponent } from './arrow-back-icon/arrow-back-icon.compon
     PlaylistAddIconComponent,
     GroupIconComponent,
     DeleteIconComponent,
-    ArrowBackIconComponent
+    ArrowBackIconComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class IconsModule {
-}
+export class IconsModule {}

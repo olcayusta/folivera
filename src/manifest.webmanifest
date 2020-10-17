@@ -2,8 +2,8 @@
   "name": "Movie App",
   "short_name": "Movie App",
   "theme_color": "#212121",
-  "background_color": "#121212",
-  "display": "standalone",
+  "background_color": "#000",
+  "display": "minimal-ui",
   "scope": "./",
   "start_url": "./",
   "icons": [

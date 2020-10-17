@@ -7,16 +7,15 @@
     <div class="form-content">
 
       <mat-form-field>
-        <mat-label>E-posta</mat-label>
-        <input matInput formControlName="email">
+        <input placeholder="E-posta" matInput formControlName="email">
         <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Şifre</mat-label>
-        <input [type]="passwordHide ? 'password' : 'text'" matInput formControlName="password">
+        <input placeholder="Şifre" [type]="passwordHide ? 'password' : 'text'" matInput formControlName="password">
         <mat-error *ngIf="form.get('password').hasError('required')">Bir şifre girin</mat-error>
-        <button type="button" matRipple matSuffix class="suffix-button" (click)="passwordHide = ! passwordHide" matTooltip="{{passwordHide ? 'Şifreyi göster' : 'Gizle'}}">
+        <button type="button" matRipple matSuffix class="suffix-button" (click)="passwordHide = ! passwordHide"
+                matTooltip="{{passwordHide ? 'Şifreyi göster' : 'Gizle'}}">
           <ng-container *ngIf="passwordHide; else visibility">
             <app-visibility-off-icon></app-visibility-off-icon>
           </ng-container>
@@ -28,6 +27,7 @@
 
       <div class="row-actions">
         <button type="submit" mat-raised-button color="primary">GÖNDER</button>
+        <!--<button mat-button>Şifremi unuttum?</button>-->
       </div>
     </div>
     <!--<div class="disable-overlay"></div>-->
