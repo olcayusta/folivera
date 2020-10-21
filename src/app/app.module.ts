@@ -45,6 +45,7 @@ import { ResetPasswordComponent } from './auth/components/reset-password/reset-p
 import { SearchFormComponent } from './sidenav-container/top-bar/search-form/search-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BigSliderComponent } from './big-slider/big-slider.component';
+import { CurrentlyPlayingMoviesComponent } from './currently-playing-movies/currently-playing-movies.component';
 
 export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
   return () => overlay.scrollStrategies.block();
@@ -68,6 +69,7 @@ export function scrolLFactory(overlay: Overlay): () => BlockScrollStrategy {
     ResetPasswordComponent,
     SearchFormComponent,
     BigSliderComponent,
+    CurrentlyPlayingMoviesComponent,
   ],
   imports: [
     BrowserModule,

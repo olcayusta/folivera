@@ -8,7 +8,7 @@ import { environment } from '@environments/environment';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
@@ -16,27 +16,25 @@ export class LoginComponent implements OnInit {
   passwordHide = true;
   loader = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private title: Title
-  ) {
-  }
+  constructor(private fb: FormBuilder, private authService: AuthService, private title: Title) {}
 
   ngOnInit(): void {
     this.title.setTitle(`Oturum aç - ${environment.appName}`);
 
-    this.form = this.fb.group({
-      email: ['olcayusta0@gmail.com', [Validators.required, Validators.email]],
-      password: ['abc', [Validators.required, Validators.min(8)]],
-    }, {updateOn: 'submit'});
+    this.form = this.fb.group(
+      {
+        email: ['olcayusta0@gmail.com', [Validators.required, Validators.email]],
+        password: ['abc', [Validators.required, Validators.min(8)]],
+      },
+      { updateOn: 'submit' }
+    );
   }
 
   submit(): void {
     if (this.form.valid) {
       this.loader = true;
-      const {email, password} = this.form.value;
-      this.authService.login(email, password).subscribe(value => {
+      const { email, password } = this.form.value;
+      this.authService.login(email, password).subscribe((value) => {
         this.loader = false;
         markDirty(this);
       });

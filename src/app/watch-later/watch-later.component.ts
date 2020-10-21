@@ -7,19 +7,14 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-watch-later',
   templateUrl: './watch-later.component.html',
   styleUrls: ['./watch-later.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WatchLaterComponent implements OnInit {
   movies: Movie[];
 
-  constructor(
-    private libraryService: LibraryService,
-    private route: ActivatedRoute
-  ) {
-  }
+  constructor(private libraryService: LibraryService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.movies = this.route.snapshot.data.movies;
   }
-
 }

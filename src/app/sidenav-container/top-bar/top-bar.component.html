@@ -1,8 +1,11 @@
 <mat-toolbar appSticky>
 
-  <button mat-icon-button (click)="openSidenav.emit()" class="menu-button" hidden>
-    <mat-icon>menu</mat-icon>
-  </button>
+  <div id="left-content">
+    <button mat-icon-button (click)="openSidenav.emit()" class="menu-button" hidden>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
   <app-topbar-logo-renderer></app-topbar-logo-renderer>
 
 <!--  <span class="flex-spacer"></span>
@@ -12,13 +15,15 @@
   <span class="flex-spacer"></span>-->
 
   <ng-container *ngIf="isLoggedIn$ | async; else notLogged">
-    <app-top-bar-user></app-top-bar-user>
+    <div id="right-content">
+      <app-top-bar-user></app-top-bar-user>
+    </div>
   </ng-container>
 
   <ng-template #notLogged>
-    <a mat-icon-button routerLink="/search" matTooltip="Ara" class="search-icon">
+  <!--  <a mat-icon-button routerLink="/search" matTooltip="Ara" class="search-icon">
       <mat-icon>search</mat-icon>
-    </a>
+    </a>-->
     <a mat-button routerLink="/login">OTURUM AÇIN</a>
   </ng-template>
 </mat-toolbar>

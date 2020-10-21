@@ -5,18 +5,14 @@ import { AuthService } from '../auth/services/auth.service';
   selector: 'app-settings-bottom-sheet',
   templateUrl: './settings-bottom-sheet.component.html',
   styleUrls: ['./settings-bottom-sheet.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SettingsBottomSheetComponent implements OnInit {
+  constructor(private authService: AuthService) {}
 
-  constructor(
-    private authService: AuthService
-  ) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  logout() {
+  logout(): void {
     this.authService.logout();
   }
 }

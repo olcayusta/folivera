@@ -1,6 +1,12 @@
 <!--<a mat-icon-button routerLink="/search" matTooltip="Ara">
   <app-search-icon></app-search-icon>
 </a>-->
+<!--<button mat-icon-button>
+  <mat-icon>tune</mat-icon>
+</button>
+<button mat-icon-button>
+  <mat-icon>help</mat-icon>
+</button>-->
 <a mat-icon-button routerLink="/settings">
   <app-settings-icon></app-settings-icon>
   <!--<mat-icon fontSet="material-icons-outlined">settings</mat-icon>-->
@@ -23,7 +29,10 @@
 </ng-container>
 
 <ng-template #bigScreen>
-  <button class="reset-button avatar-button" matTooltip="Olcay Usta" #avatarButton="cdkOverlayOrigin" cdkOverlayOrigin
+  <button class="reset-button avatar-button" matTooltip="Olcay Usta" routerLink="/settings">
+    <img class="avatar" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
+  </button>
+<!--  <button class="reset-button avatar-button" matTooltip="Olcay Usta" #avatarButton="cdkOverlayOrigin" cdkOverlayOrigin
           (click)="openAvatarPopup()">
     <img class="avatar" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
   </button>
@@ -33,5 +42,5 @@
                [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
                [cdkConnectedOverlayOpen]="avatarPopupOpened">
     <ng-container *ngComponentOutlet="avatarPopupComponent"></ng-container>
-  </ng-template>
+  </ng-template>-->
 </ng-template>

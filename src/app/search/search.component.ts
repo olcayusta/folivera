@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit, OnDestroy {
   searchControl = new FormControl('');
@@ -19,26 +19,19 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
 
-  constructor(
-    private searchService: SearchService,
-    private route: ActivatedRoute,
-    private title: Title
-  ) {
-  }
+  constructor(private searchService: SearchService, private route: ActivatedRoute, private title: Title) {}
 
   ngOnInit(): void {
-
     const searchTerm = this.route.snapshot.paramMap.get('searchTerm');
     this.movies$ = this.searchService.search(searchTerm);
 
-
-/*    this.title.setTitle(`Ara - ${environment.appName}`);
-    this.subscription = this.searchControl.valueChanges.subscribe(value => {
-      if (value.length) {
-        this.movies$ = this.searchService.search(value);
-        this.title.setTitle(`${value} - ${environment.appName}`)
-      }
-    });*/
+    /*    this.title.setTitle(`Ara - ${environment.appName}`);
+        this.subscription = this.searchControl.valueChanges.subscribe(value => {
+          if (value.length) {
+            this.movies$ = this.searchService.search(value);
+            this.title.setTitle(`${value} - ${environment.appName}`)
+          }
+        });*/
   }
 
   ngOnDestroy() {

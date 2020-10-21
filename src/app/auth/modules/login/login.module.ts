@@ -25,11 +25,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     MatRippleModule,
     IconsModule,
     MatProgressBarModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
-  providers: [
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'standard'}}
-  ]
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } }],
 })
-export class LoginModule {
-}
+export class LoginModule {}

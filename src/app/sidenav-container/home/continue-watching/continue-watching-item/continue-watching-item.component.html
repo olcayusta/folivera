@@ -3,7 +3,7 @@
     <div class="img-background" matRipple>
       <img class="img" appLazyLoadImg [attr.data-src]="movie.posterUrl">
       <div class="movie-duration">1:41:00</div>
-      <mat-progress-bar [value]="progress"></mat-progress-bar>
+    <!--  <mat-progress-bar [value]="progress"></mat-progress-bar>-->
     </div>
     <div class="details">
       <a [routerLink]="['/movie', movie.id]">
@@ -18,6 +18,8 @@
     </div>
   </div>
 </a>
+
+
 
 <mat-menu #moreMenu="matMenu" overlapTrigger>
   <ng-template matMenuContent>
