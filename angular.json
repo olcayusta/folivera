@@ -134,6 +134,7 @@
   },
   "defaultProject": "ng-app",
   "cli": {
-    "analytics": "58737cf5-1bb1-4885-8070-55bd9f82a576"
+    "analytics": "58737cf5-1bb1-4885-8070-55bd9f82a576",
+    "packageManager": "yarn"
   }
 }
